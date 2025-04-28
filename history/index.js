@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const httpRequest = require("request");
 const constants = require('../constants/index');
+require('dotenv').config( {path: './.env'});
 
 router.get('/:country', (req, res) => {
 
@@ -15,8 +16,8 @@ router.get('/:country', (req, res) => {
     let options = { method: 'GET', uri: url, headers: {} };
     
     options.headers = {
-        "x-rapidapi-host": constants.API_KEY.API_HOST,
-        "x-rapidapi-key": constants.API_KEY.API_KEY
+        "x-rapidapi-host": process.env.API_HOST,
+        "x-rapidapi-key": process.env.API_KEY
     };
 
     httpRequest.get(url, options, (error, response, body) => {
@@ -42,8 +43,8 @@ router.get('/:country/:date', (req, res) => {
     let options = { method: 'GET', uri: url, headers: {} };
     
     options.headers = {
-        "x-rapidapi-host": constants.API_KEY.API_HOST,
-        "x-rapidapi-key": constants.API_KEY.API_KEY
+        "x-rapidapi-host": process.env.API_HOST,
+        "x-rapidapi-key": process.env.API_KEY
     };
 
     httpRequest.get(url, options, (error, response, body) => {

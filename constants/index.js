@@ -5,9 +5,5 @@ module.exports = {
         StatisticsURL: "/statistics",
         HistoryURL: "/history",
         CountryURL: "/countries",
-    },
-    API_KEY: {
-        API_HOST: "<your api host>",
-        API_KEY: "<your api key>"
     }
 };
