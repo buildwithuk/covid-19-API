@@ -13,6 +13,12 @@ app.use(function(req, res, next) {
 
 const PORT = 5000;
 
+// Hello World
+app.get('/', (req, res) => {
+
+    res.status(200).json({ message: "Hello World" });
+});
+
 app.use('/api/history', history);
 app.use('/api/statistics', statistics);
 app.use('/api/countries', countries);
