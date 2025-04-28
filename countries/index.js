@@ -4,7 +4,7 @@ const constants = require('../constants/index');
 const httpRequest = require("request");
 require('dotenv').config( {path: './.env'});
 
-router.get('/list', (req, res) => {
+router.get('/', (req, res) => {
 
     res.setHeader("Content-Type", "application/json");
 
@@ -28,7 +28,7 @@ router.get('/list', (req, res) => {
     });
 });
 
-router.get('/list/:name', (req, res) => {
+router.get('/:name', (req, res) => {
     
     res.setHeader("Content-Type", "application/json");
     if (!req.params) {
